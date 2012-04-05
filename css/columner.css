@@ -12,16 +12,17 @@ a{
 	-webkit-tap-highlight-color: rgba(0,0,0,0); 
 }
 h1{
-	font-family: "Garamond", "Verdana";
+	font-family: "Times New Roman", serif;
 	line-height: 50px;
 	padding: 0px;
 	margin: 0px;
 	font-size: 28px;
 }
 h2{
-	font-family: "Garamond", "Verdana";
+	font-family: "Times New Roman", serif;
 	line-height: 50px;
 	font-size: 20px;
+	font-weight
 	padding: 0px;
 	margin: 0px;
 }
@@ -87,8 +88,8 @@ div.temp{
 }
 
 div.page.theme-a{  
-	background: #333;
-	color: #fff;
+	background: #dfdfdf;
+	color: #000;
 }
 
 div.page.theme-b{  

@@ -83,7 +83,7 @@ $(document).ready(function(){
 					if(node.nodeName != '#text'){
 						items[ count ] = { };
 						items[ count ]["node"]			=	node.nodeName;
-						items[ count ]["value"]			=	node.textContent;
+						items[ count ]["value"]			=	node.innerHTML;
 						if(node.nodeName == "H1" && titleFound != true){
 							title = node.textContent;
 							titleFound = true;
@@ -263,7 +263,7 @@ $(document).ready(function(){
 		//-------------
 		
 		var pause = false;
-		$('.viewer').bind('mousewheel', function(e){
+		$('body').bind('mousewheel', function(e){
 			if(pause == false){
 				if(e.wheelDelta < 0) {
 					nextPage();
@@ -341,9 +341,10 @@ $(document).ready(function(){
 			$(".page").hide();
 			if(!$(".page-"+pageNumber+"#article_"+article).is(':hidden'))
 			{
-				pageNumber--;
+				$(".page.last#article_"+article).show();
+			}else{
+				$(".page-"+pageNumber+"#article_"+article).show();
 			}
-			$(".page-"+pageNumber+"#article_"+article).show();
 		}
 		
 		//-------------

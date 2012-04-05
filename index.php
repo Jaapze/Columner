@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Colls</title>
+        <title>Columner</title>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/columner.css" />
     </head>
@@ -11,47 +11,47 @@
 	
 	<div class="container">
 		<article data-cols="3" data-theme="b">	
-			<h1>Bomen</h1>
- 
-			<p>Mijn spreekbeurt gaat over bomen. Hoe ze groeien en hoe ze eruit zien wat ze allemaal doen en welke boomsoorten er zijn. Ook vertel ik wat een boomkweker doet. En zelfs wat de zaden van een boom doen.</p>
+			<h1>Benefits of Trees</h1>
+			<p>Most trees and shrubs in cities or communities are planted to provide beauty or shade. These are two excellent reasons for their use. Woody plants also serve many other purposes, and it often is helpful to consider these other functions when selecting a tree or shrub for the landscape. The benefits of trees can be grouped into social, communal, environmental, and economic categories.</p>
 			 
-			<h2>Wat zijn bomen?</h2>
+			<h2>Social Benefits</h2>
+			<p>We like trees around us because they make life more pleasant. Most of us respond to the presence of trees beyond simply observing their beauty. We feel serene, peaceful, restful, and tranquil in a grove of trees. We are “at home” there. Hospital patients have been shown to recover from surgery more quickly when their hospital room offered a view of trees. The strong ties between people and trees are most evident in the resistance of community residents to removing trees to widen streets. Or we note the heroic efforts of individuals and organizations to save particularly large or historic trees in a community.</p>
+			<p>The stature, strength, and endurance of trees give them a cathedral-like quality. Because of their potential for long life, trees frequently are planted as living memorials. We often become personally attached to trees that we or those we love have planted.</p>
+			<h2>Communal Benefits</h2>
+			<p>Even though trees may be private property, their size often makes them part of the community as well. Because trees occupy considerable space, planning is required if both you and your neighbors are to benefit. With proper selection and maintenance, trees can enhance and function on one property without infringing on the rights and privileges of neighbors.</p>
+			<p>City trees often serve several architectural and engineering functions. They provide privacy, emphasize views, or screen out objectionable views. They reduce glare and reflection. They direct pedestrian traffic. They provide background to and soften, complement, or enhance architecture.</p>
+	 
+			<h2>Environmental Benefits</h2>
+			<p>Trees alter the environment in which we live by moderating climate, improving air quality, conserving water, and harboring wildlife. Climate control is obtained by moderating the effects of sun, wind, and rain. Radiant energy from the sun is absorbed or deflected by leaves on deciduous trees in the summer and is only filtered by branches of deciduous trees in winter. We are cooler when we stand in the shade of trees and are not exposed to direct sunlight. In winter, we value the sun’s radiant energy. Therefore, we should plant only small or deciduous trees on the south side of homes.</p>
+			<p>Wind speed and direction can be affected by trees. The more compact the foliage on the tree or group of trees, the greater the influence of the windbreak. The downward fall of rain, sleet, and hail is initially absorbed or deflected by trees, which provides some protection for people, pets, and buildings. Trees intercept water, store some of it, and reduce storm runoff and the possibility of flooding.</p>
+			<p>Dew and frost are less common under trees because less radiant energy is released from the soil in those areas at night.</p>
+			<p>Temperature in the vicinity of trees is cooler than that away from trees. The larger the tree, the greater the cooling. By using trees in the cities, we are able to moderate the heat-island effect caused by pavement and buildings in commercial areas.</p>
+			<p>Air quality can be improved through the use of trees, shrubs, and turf. Leaves filter the air we breathe by removing dust and other particulates. Rain then washes the pollutants to the ground. Leaves absorb carbon dioxide from the air to form carbohydrates that are used in the plant’s structure and function. In this process, leaves also absorb other air pollutants—such as ozone, carbon monoxide, and sulfur dioxide—and give off oxygen.</p>
+			<p>By planting trees and shrubs, we return to a more natural, less artificial environment. Birds and other wildlife are attracted to the area. The natural cycles of plant growth, reproduction, and decomposition are again present, both above and below ground. Natural harmony is restored to the urban environment.</p>
 			 
-			<p>Bomen zijn eigenlijk grote planten. Een boom heeft wortels, een stam, takken, twijgen, bladeren en vruchten. De wortels zorgen ervoor dat de een boom stevig in de grond vast zit. De grotere wortels bestaan net als de stam uit hout. De kleinere wortels, waarvan sommige zo dun zijn als een haar, zuigen water uit de bodem op. In dat water zitten voedingsstoffen opgelost. Die voedingsstoffen heeft de boom nodig om in leven te blijven. Het water met het voedsel gaat door de wortels, de stam en de takken naar de bladeren. Uit de wortels groeit de stam. De stam is van hout en daardoor is hij sterk en buigzaam. Aan de stam zitten takken en twijgen. Aan de twijgen zitten bladeren of naalden. De bladeren en naalden hebben zonlicht nodig. Bomen die niet dicht bij elkaar staan hebben veel zijtakken omdat het zonlicht gemakkelijk bij de bladeren kan komen. Bomen die dicht bij elkaar staan groeien hoog en hebben alleen aan de bovenkant takken. Want alleen daar krijgen de bladeren voldoende zonlicht.</p>
-
-
-			<h2>Wat zijn boomzaden?</h2>
-			 
-			<p>Planten maken zaden. Bomen zijn grote planten dus maken die ook zaden. Sommige bomen, zoals de kokospalm en de kastanje, maken grote zaden. Andere bomen, zoals de iep, maken kleine zaden. Bomen maken zaden om te zorgen dat hun soort blijft bestaan. In boomzaden zit een piepklein plantje, eigenlijk een klein boompje. De rest van een zaad, het grootste gedeelte is voedsel. Het zaad is verpakt in een stevige zaadhuid. Zaden ontkiemen pas na de winter, omdat ze dan meer kans hebben om te overleven. Veel zaden kunnen pas ontkiemen als ze een koude periode hebben doorgemaakt. Om te ontkiemen, moet er ook voldoende water zijn en moet de temperatuur hoog genoeg zijn.</p>
-			<p>Niet uit elk boomzaad groeit een boom. Zaden worden opgegeten of vertrapt, ze verrotten of ze verdrogen. Van de duizenden zaadjes die op de grond vallen, krijgt maar een enkel zaadje de kans uit te groeien tot een grote boom.</p>
-			<p>Mensen en dieren eten boomzaden, denk maar aan tamme kastanjes, walnoten, hazelnoten, enzovoort. Dieren eten vaak zaden die mensen niet lekker vinden. Dieren eten in de herfst veel omdat ze een groot deel van de zomer hun jongen hebben gevoed en zelf nogal wat tekort zijn gekomen. Door in de herfst veel te eten kunnen ze de winter beter doorkomen.</p>
-			 
-			 
-			<h2>Hoe groeit een boom?</h2>
-			 
-			<p>In januari, als de dagen weer langer worden, begint de boom met zijn wortels naar voedingsstoffen te zoeken. In het voorjaar komt de groei goed op gang. De knoppen krijgen voedsel, ze gaan open en er komen bladeren uit. Sommige bomen beginnen te bloeien. De takken worden langer. Een boom groeit in de lengte maar ook in de breedte. Jaarlijks groeit rondom de stam een nieuw laagje hout. Als een boom wordt omgezaagd, zie je al die laagjes als ringen op het zaagvlak. Een ring voor elk jaar dat de boom heeft geleefd. Daarom heten ze jaarringen.</p>
-			<p>Bomen groeien in het voorjaar het hardst. Daarom zijn de licht stukken van de jaarringen van het voorjaar breder dan de donkere stukken van de jaarringen van de herfst. 's Zomers maken de bomen vruchten met zaden. Die zijn rijp in de herfst en vallen dan van de boom. </p>
-			<p>In de herfst, als de dagen korter worden en het kouder wordt, stoppen de bomen met groeien. De wortels zuigen geen vocht meer op. De bladeren krijgen daardoor geen voedsel meer en de bladeren van loofbomen verkleuren. Daarna laat de boom zijn bladeren vallen. Insecten en andere dieren knabbelen aan de afgevallen bladeren. Wormen trekken de bladeren in hun gangetjes onder de grond. Daar veranderen de bladeren in aarde. De voedingsstoffen uit de bladeren komen zo weer in de grond terecht en lossen op in het grondwater. Het volgend jaar zuigt de boom het water weer op en gebruikt de voedingsstoffen om te groeien.</p>
-			<p>Als bladeren afvallen, zitten er knoppen vlak boven de littekens van de afgevallen bladeren. Om de knoppen zitten dikke, taaie schubben om ze tegen wind en kou te beschermen. In de lente komen uit de knoppen nieuwe bladeren en worden de takken langer. Als een tak groeit is hij eerst zacht en groen. In de herfst wordt hij hard en komt er een laagje schors omheen zodat hij goed beschermt is tegen kou. De schors van een boom is dood en groeit niet meer. Doordat de boom dikker wordt, splijt en scheurt de schors. Dat gebeurt bij iedere boom op een andere manier. Daarom ziet de schors van verschillende soorten bomen er verschillend uit.</p>
-			<p>Naaldbomen verliezen het hele jaar door hun naalden. Maar ze doen dat zo, dat ze nooit helemaal kaal worden.</p>
-			<p>Als mensen volwassen zijn, groeien ze niet meer. Maar bomen groeien door zolang ze leven. Daardoor worden bomen zo groot.</p>
-			 
-			<h2>Wat doet de boomkweker?</h2>
-			 
-			<p>Voor het beplanten van een tuin een park of een bos zijn heel veel verschillende soorten bomen nodig. Boomkwekers zijn voortdurend bezig om nieuwe soorten bomen te ontwikkelen. Op boomkwekerijen worden uit zaden of stukken van boomtakken bomen gekweekt. </p>
-			<p>In het vroege voorjaar worden in de kas bomen ge&euml;nt of gezaaid. Later in het voorjaar worden ze buiten uitgeplant. 's Zomers zet de kweker stokken bij de bomen om ervoor te zorgen dat ze recht groeien. Hij snoeit de bomen, geeft ze water en kijkt of ze geen ziektes hebben. Als er schadelijke insecten op de bomen zitten, gebruikt de kweker natuurlijke vijanden (een andere soort insecten) om de insecten te bestrijden. Of hij spuit met middelen die niet gevaarlijk zijn voor de nuttige insecten. </p>
-			<p>In de herfst snoeit de boomkweker de bomen, stekt ze en geeft ze mest. Hij haalt bomen uit de grond om ze te verkopen. Als het 's winters vriest, moeten jonge bomen worden afgedekt tegen de vorst.</p>
-		</article>
+			<h2>Economic Benefits</h2>
+			<p>Individual trees and shrubs have value, but the variability of species, size, condition, and function makes determining their economic value difficult. The economic benefits of trees can be both direct and indirect. Direct economic benefits are usually associated with energy costs. Air-conditioning costs are lower in a tree-shaded home. Heating costs are reduced when a home has a windbreak. Trees increase in value from the time they are planted until they mature. Trees are a wise investment of funds because landscaped homes are more valuable than nonlandscaped homes. The savings in energy costs and the increase in property value directly benefit each home owner.</p>
+			<p>The indirect economic benefits of trees are even greater. These benefits are available to the community or region. Lowered electricity bills are paid by customers when power companies are able to use less water in their cooling towers, build fewer new facilities to meet peak demands, use reduced amounts of fossil fuel in their furnaces, and use fewer measures to control air pollution. Communities also can save money if fewer facilities must be built to control storm water in the region. To the individual, these savings are small, but to the community, reductions in these expenses are often in the thousands of dollars.</p>
+			
+			<h2>Trees Require an Investment</h2>
+			<p>Trees provide numerous aesthetic and economic benefits but also incur some costs. You need to be aware that an investment is required for your trees to provide the benefits that you desire. The biggest cost of trees and shrubs occurs when they are purchased and planted. Initial care almost always includes some watering. Leaf, branch, and whole tree removal and disposal can be expensive.</p>
+			<p>To function well in the landscape, trees require maintenance. Much can be done by the informed home owner. Corrective pruning and mulching gives trees a good start. Shade trees, however, quickly grow to a size that may require the services of a professional arborist. Arborists have the knowledge and equipment needed to prune, spray, fertilize, and otherwise maintain a large tree. Your garden center owner, university extension agent, community forester, or consulting arborist can answer questions about tree maintenance, suggest treatments, or recommend qualified arborists.</p>
+			
+			<h2>The PHC Alternative</h2>
+			<p>Maintaining mature landscapes is a complicated undertaking. You may wish to consider a professional plant health care (PHC) maintenance program that is now available from many landscape care companies. The program is designed to maintain plant vigor and initially should include inspections to detect and treat any existing problems that could be damaging or fatal. Thereafter, regular inspections and preventive maintenance help ensure plant health and beauty. Refer to our plant health care brochure for more information.</p>
+			</article>
 		
 		
 		<article data-cols="2" data-theme="a">
-			<h1>Wikipedia</h1>
-			 
-			<p>Een boom is een vaste plant met een verhoute stam en een kroon (kruin). Er is geen eensgezindheid over de omschrijving van een boom. De meeste definities noemen hoogte (minimaal vier meter) en het bezitten van een stam.</p>
-			<p>Een boom kan afhankelijk van de soort tot meer dan honderd meter hoog worden en groeien op zeer verschillende gronden. De mangrovesoorten groeien zelfs in brak water.</p>
-			<p>Een boom kan afhankelijk van de soort en de omstandigheden heel oud worden, van vele honderden tot enkele duizenden jaren. Zo kan de Japanse notenboom meer dan 1000 jaar oud worden: in China is de oudste Japanse notenboom ongeveer 3500 jaar. Wilg en populier behoren tot de boomsoorten die meestal niet meer dan honderd jaar oud worden.</p>
-			<p>Vanwege het formaat spelen bomen vaak een hoofdrol in een hele levensgemeenschap. Vogels bouwen er hun nest, mossen, korstmossen, schimmels en algen leven op de stam, op de takken en soms op de bladen. Schimmels leven in symbiose met of parasitair op of in de boom. Insecten leven van de bladeren of het hout (onder andere houtworm). Sluipwespen parasiteren weer op deze insecten. Ook is de boom vanwege de vruchten en zaden een belangrijke voedselbron voor onder andere eekhoorns en vogels.</p>
-			<p>De mens gebruikt de boom naast voedselproductie en sier ook voor de productie van timmer- en brandhout.</p>
+			<figure>
+				<img src="../img/web/logo.png"/>
+			</figure>
+			
+			<h1>Contact</h1>
+			 <p>Jaap Redeker</p>
+			 <p>06 102 65 876</p>
+			 <p>Jaap@atticweb.nl</p>
+			 <p>http://www.atticweb.nl</p>
 		</article>
 		
 		
