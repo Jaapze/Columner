@@ -4,15 +4,15 @@ $(document).ready(function(){
 			var thisElement = $('div.container');
 			var documentHeight;
 			var documentWidth;
-		//content
+		//Content
 			var content;
 			var articles = {};
 			var pageNumber = 1;
 			var article	=	0;
 			var articleTitles = {};
-		//column
+		//Column
 			var columnWidth;
-		//settings
+		//Settings
 			var space	=	20;
 			var lineHeight	=	25;
 			var widthOfColumn = 280;
@@ -21,7 +21,7 @@ $(document).ready(function(){
 		init();
 		
 		//-------------
-		//	1, this function is for statup, and reinitialize
+		//	Statup, and reinitialize
 		//-------------
 		
 		function init(){
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		}
 		
 		//-------------
-		//	2, this function is for flushing content
+		//  Flushing content
 		//-------------
 		
 		function flush(){
@@ -42,31 +42,35 @@ $(document).ready(function(){
 		}
 		
 		//-------------
-		//	3, Setting all the layout and layers
+		//	Setting all the layout and layers
+		//   - viewer
+		//   - menu/button
+		//   - toolbar
+		//   - pageCounter
 		//-------------
 		
 		function setLayers(){
 			thisElement.html('<div class="viewer"></div><div class="menu"></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageCounter"></div></div>');
+			// Setting height of the viewer
 			$(".viewer").css("height", getDocHeight()-60+"px");
 		}
 		
 		//-------------
-		//	4, setting the dimensions of the document
+		// 	Dimensions of the document
 		//-------------
 		
 		function setHeightWidth(){
 			documentHeight				=	thisElement.outerHeight();
 			documentWidth				=	thisElement.outerWidth();
-			
-			thisElement.css("width", widthOfColumn+"px");
 			thisElement.css("width", "100%");
 		}
 		
 		//-------------
-		// 5, Gets all article tags and put it into an array
+		//  Gets all article tags and put it into an array
 		//-------------
 		
 		function setArticles(){
+			// Foreach the article tags
 			thisElement.children().each(function(_, node) {
 				articles[ _ ] = { };
 				articles[ _ ]["data-cols"]		=	node.getAttribute('data-cols');
@@ -93,34 +97,34 @@ $(document).ready(function(){
 		}
 		
 		//-------------
-		//	6, all the content will be placed in pages and columns
+		//	Setting the pages with its columns
 		//-------------
 		
 		function setPages(){
-			//foreach all articles [start] {
+			// Foreach all articles
 			$.each(articles, function(key, value){
 				var totalCounted		=	0;
 				var elements			=	value["article"];
 				var marge				=	0;
 				articleTitles[key]		=	value["title"];
 				
-				//current values
+				// Current values
 				var current				=	[];
 				current["column"] 	=	1;
 				current["page"]		=	0;
 				current["element"]	=	-1;
 				
-				//Height of page [start] {
+				// Height of page
 				var HM	=	(getDocHeight()-120)%lineHeight;
 				var heightOfPage	=	(HM < lineHeight/2)
 					?(getDocHeight()-120)-HM
 					:(getDocHeight()-120)+(lineHeight-HM);	
-				//Height of page [end] }
 				
 				var done = false;
 				var marginTop = 0;
 				var lastItemHeight;
 				
+				// If determined number of columns does not fit onto the page it will recalculate the number of columns
 				if(value["data-cols"]*(widthOfColumn+space) > getDocWidth())
 				{
 					var cols	=	Math.floor(getDocWidth()/(widthOfColumn+space));
@@ -130,13 +134,13 @@ $(document).ready(function(){
 
 				
 				do{
-					//this makes the first page of an article
+					// This makes the first page of an article
 					if(current["page"] == 0){
 						current["page"]++;
 						$(".viewer", thisElement).append('<div class="page page-'+current["page"]+' theme-'+value["data-theme"]+' first" id="article_'+key+'" data-pageNumber="'+current["page"]+'" data-articleNumber="'+key+'" style="width: '+(widthOfColumn+space)+'px; height: '+heightOfPage+'px"><div class="column column_'+current["column"]+'" style="height: '+heightOfPage+'px"></div></div>');
 					}
 					
-					//If needed it makes a new page					
+					// If needed it makes a new page					
 					if(marge == 0){
 						current["element"]++;
 					}else{
@@ -144,13 +148,14 @@ $(document).ready(function(){
 						marge = 0;
 					}
 					
-					//removes half headers
+					// Removes headers if its shown half on a page (#1)
 					var remove = false;
 					if((heightOfPage-totalCounted) < (2*lineHeight) && heightOfPage-totalCounted > 0){
 						totalCounted += heightOfPage-totalCounted;
-						remove = true;
+						remove = true; 
 					}			
 					
+					// Check if all elements are done
 					if(elements[current["element"]] == undefined){
 						done = true;
 						$(".page").hide();
@@ -158,28 +163,31 @@ $(document).ready(function(){
 						$(".page-"+current["page"]+"#article_"+key).addClass("last");
 						break;
 					}
-
+					
+					// Place the content into the current pages/columns
 					var iden = key+"_"+current["page"]+"_"+current["column"];
 					$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+' id="'+iden+'">'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
 					totalCounted += $("#"+iden).height();
 					
-					//checks if item has to be removed
+					// Checks if item has to be removed (#1)
 					if(remove){
 						$("#"+iden).hide();
 						remove = false;
 					}
 					
+					// Use the margin on a element if there is any
 					if(marginTop != 0){
 						totalCounted -= marginTop;
 						$("#"+iden).css("marginTop", -marginTop+"px");
 						marginTop = 0;
 					}
 					
+					// Gets the height of the last placed element And removes the id attribute
 					lastItemHeight	=	$("#"+iden).height();
 					$("#"+iden).removeAttr("id");
 					
 					
-					//this makes a new column
+					// Makes a new column
 					if(totalCounted > heightOfPage){
 						if(current["column"] >= cols){
 							current["page"]++;
@@ -198,15 +206,18 @@ $(document).ready(function(){
 				
 			});
 			afterLoading();
-			//foreach all articles [end] }
 		}
+		
+		//-------------
+		// After loading the document
+		//-------------
 		
 		function afterLoading(){
 			updatePageCounter();
 		}
 		
 		//-------------
-		//	7, When the window is resized it will call the function redo()
+		//	When the window is resized it will call the function redo()
 		//-------------
 		
 		var timeout = false;
@@ -218,7 +229,7 @@ $(document).ready(function(){
 		});
 		
 		//-------------
-		//	8, flushes all the content and reinitializes the document
+		//	Flushes all the content and reinitializes the document
 		//-------------
 		
 		function redo(){
@@ -229,20 +240,22 @@ $(document).ready(function(){
 		
 		
 		//-------------
-		//	9, Handeling all of the navigation
+		//	Handeling all of the navigation with arrow keys
 		//-------------
 
 		$(document).keydown(function(e){
+			// Left arrow
 			if(e.keyCode == 37){
 				prevPage();
 			}
+			// Right arrow
 			if(e.keyCode == 39){
 				nextPage();
 			}
 		});
 		
 		//-------------
-		//	10, goes to the next page
+		//	Goes to the next page
 		//-------------
 		
 		function nextPage(){
@@ -261,7 +274,7 @@ $(document).ready(function(){
 		}
 		
 		//-------------
-		//	11, Goes to the prev page
+		//	Goes to the previous page
 		//-------------
 		
 		function prevPage(){
@@ -286,9 +299,17 @@ $(document).ready(function(){
 			updatePageCounter();
 		}
 		
+		//-------------
+		//	Updates the pageCounter, number of pages and title of document
+		//-------------
+		
 		function updatePageCounter(){
 			$(".pageCounter").html(articleTitles[article]+" ("+pageNumber+" / "+parseInt(($("body").find("#article_"+article+":hidden").length)+1)+")");
 		}
+		
+		//-------------
+		//	Goes to the current page
+		//-------------
 		
 		function gotoPage(){
 			$(".page").hide();
@@ -299,10 +320,9 @@ $(document).ready(function(){
 			$(".page-"+pageNumber+"#article_"+article).show();
 		}
 		
-		
-		
 		//-------------
-		//	13, Handles the swipe action
+		//	Handles the swipe gestures with TouchWipe
+		//  http://archive.plugins.jquery.com/project/Touchwipe-iPhone-iPad-wipe-gesture
 		//-------------
 		
 		$("body").touchwipe({
@@ -316,7 +336,7 @@ $(document).ready(function(){
 		});
 		
 		//-------------
-		//	14, getting the windows height (for all browsers)
+		//	Getting the windows height (for all browsers)
 		//-------------
 		
 		function getDocHeight() {
@@ -329,7 +349,7 @@ $(document).ready(function(){
 		}
 		
 		//-------------
-		//	15, getting the windows width (for all browsers)
+		//	Getting the windows width (for all browsers)
 		//-------------
 		
 		function getDocWidth() {
@@ -340,6 +360,10 @@ $(document).ready(function(){
 				Math.max(D.body.clientWidth, D.documentElement.clientWidth)
 			);
 		}
+		
+		//-------------
+		//  Menu button opens the menu
+		//-------------
 		
 		$("#menu").live('click', function(){
 			$(".menu").slideToggle(200);
