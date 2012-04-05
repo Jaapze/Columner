@@ -146,8 +146,8 @@ $(document).ready(function(){
 					
 					//removes half headers
 					var remove = false;
-					if(heightOfPage-totalCounted < (2*lineHeight) && heightOfPage-totalCounted > 0 && elements[current["element"]]["node"] == 'H2'){
-						totalCounted+=heightOfPage-totalCounted;
+					if((heightOfPage-totalCounted) < (2*lineHeight) && heightOfPage-totalCounted > 0){
+						totalCounted += heightOfPage-totalCounted;
 						remove = true;
 					}			
 					
@@ -158,7 +158,7 @@ $(document).ready(function(){
 						$(".page-"+current["page"]+"#article_"+key).addClass("last");
 						break;
 					}
-					
+
 					var iden = key+"_"+current["page"]+"_"+current["column"];
 					$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+' id="'+iden+'">'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
 					totalCounted += $("#"+iden).height();
@@ -213,7 +213,7 @@ $(document).ready(function(){
 		$(window).resize(function() {
 			if (timeout === false) {
 				timeout = true;
-				setTimeout(redo, 500);
+				setTimeout(redo, 300);
 			}
 		});
 		
