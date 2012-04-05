@@ -151,12 +151,16 @@ $(document).ready(function(){
 					// Removes headers if its shown half on a page (#1)
 					var remove = false;
 					if((heightOfPage-totalCounted) < (2*lineHeight) && heightOfPage-totalCounted > 0){
-						totalCounted += heightOfPage-totalCounted;
-						remove = true; 
+						if(typeof(elements[current["element"]]) != 'undefined'){
+							if(elements[current["element"]]["node"] == "H2"){
+							totalCounted += heightOfPage-totalCounted;
+							remove = true; 
+							}
+						}
 					}			
 					
 					// Check if all elements are done
-					if(elements[current["element"]] == undefined){
+					if(typeof(elements[current["element"]]) == 'undefined'){
 						done = true;
 						$(".page").hide();
 						$(".first#article_0").show();
@@ -253,6 +257,28 @@ $(document).ready(function(){
 				nextPage();
 			}
 		});
+		
+		//-------------
+		//	Handeling all of the navigation with scrollWheel
+		//-------------
+		
+		var pause = false;
+		$('.viewer').bind('mousewheel', function(e){
+			if(pause == false){
+				if(e.wheelDelta < 0) {
+					nextPage();
+				}else {
+					prevPage();
+				}
+				pause = true;
+				setTimeout(endPause, 300);
+			}
+			return false;
+		});
+		 
+		function endPause(){
+			pause = false;
+		}
 		
 		//-------------
 		//	Goes to the next page
