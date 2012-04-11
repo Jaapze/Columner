@@ -13,25 +13,24 @@ a{
 }
 h1{
 	font-family: "Times New Roman", serif;
-	line-height: 50px;
-	padding: 0px;
-	margin: 0px;
+	line-height: 25px;
+	padding: 15px 0 10px 0; /*total must be line-height*/
 	font-size: 28px;
 }
 h2{
 	font-family: "Times New Roman", serif;
-	line-height: 50px;
+	line-height: 25px;
+	padding: 15px 0 10px 0; /*total must be line-height*/
 	font-size: 20px;
-	font-weight
-	padding: 0px;
-	margin: 0px;
 }
 p{
 	text-indent: 20px;
-	margin: 0;
 	font-size: 14px;
 	line-height: 25px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+figure{
+	height: 300px;
 }
 div.column{
 	line-height: 25px;
@@ -79,6 +78,7 @@ div.page{
 	overflow: hidden;
 	margin: 0 auto;
 	padding: 20px 20px 20px 0;
+	position: relative;
 }
 div.temp{
 	width: 280px;

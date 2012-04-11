@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" type="image/png" href="images/fav.png">
         <title>Columner</title>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/columner.css" />
@@ -10,43 +11,27 @@
     <body>
 	
 	<div class="container">
-		<article data-cols="3" data-theme="b">	
-			<h1>Benefits of Trees</h1>
-			<p>Most trees and shrubs in cities or communities are planted to provide beauty or shade. These are two excellent reasons for their use. Woody plants also serve many other purposes, and it often is helpful to consider these other functions when selecting a tree or shrub for the landscape. The benefits of trees can be grouped into social, communal, environmental, and economic categories.</p>
-			 
-			<h2>Social Benefits</h2>
-			<p>We like trees around us because they make life more pleasant. Most of us respond to the presence of trees beyond simply observing their beauty. We feel serene, peaceful, restful, and tranquil in a grove of trees. We are “at home” there. Hospital patients have been shown to recover from surgery more quickly when their hospital room offered a view of trees. The strong ties between people and trees are most evident in the resistance of community residents to removing trees to widen streets. Or we note the heroic efforts of individuals and organizations to save particularly large or historic trees in a community.</p>
-			<p>The stature, strength, and endurance of trees give them a cathedral-like quality. Because of their potential for long life, trees frequently are planted as living memorials. We often become personally attached to trees that we or those we love have planted.</p>
-			<h2>Communal Benefits</h2>
-			<p>Even though trees may be private property, their size often makes them part of the community as well. Because trees occupy considerable space, planning is required if both you and your neighbors are to benefit. With proper selection and maintenance, trees can enhance and function on one property without infringing on the rights and privileges of neighbors.</p>
-			<p>City trees often serve several architectural and engineering functions. They provide privacy, emphasize views, or screen out objectionable views. They reduce glare and reflection. They direct pedestrian traffic. They provide background to and soften, complement, or enhance architecture.</p>
-	 
-			<h2>Environmental Benefits</h2>
-			<p>Trees alter the environment in which we live by moderating climate, improving air quality, conserving water, and harboring wildlife. Climate control is obtained by moderating the effects of sun, wind, and rain. Radiant energy from the sun is absorbed or deflected by leaves on deciduous trees in the summer and is only filtered by branches of deciduous trees in winter. We are cooler when we stand in the shade of trees and are not exposed to direct sunlight. In winter, we value the sun’s radiant energy. Therefore, we should plant only small or deciduous trees on the south side of homes.</p>
-			<p>Wind speed and direction can be affected by trees. The more compact the foliage on the tree or group of trees, the greater the influence of the windbreak. The downward fall of rain, sleet, and hail is initially absorbed or deflected by trees, which provides some protection for people, pets, and buildings. Trees intercept water, store some of it, and reduce storm runoff and the possibility of flooding.</p>
-			<p>Dew and frost are less common under trees because less radiant energy is released from the soil in those areas at night.</p>
-			<p>Temperature in the vicinity of trees is cooler than that away from trees. The larger the tree, the greater the cooling. By using trees in the cities, we are able to moderate the heat-island effect caused by pavement and buildings in commercial areas.</p>
-			<p>Air quality can be improved through the use of trees, shrubs, and turf. Leaves filter the air we breathe by removing dust and other particulates. Rain then washes the pollutants to the ground. Leaves absorb carbon dioxide from the air to form carbohydrates that are used in the plant’s structure and function. In this process, leaves also absorb other air pollutants—such as ozone, carbon monoxide, and sulfur dioxide—and give off oxygen.</p>
-			<p>By planting trees and shrubs, we return to a more natural, less artificial environment. Birds and other wildlife are attracted to the area. The natural cycles of plant growth, reproduction, and decomposition are again present, both above and below ground. Natural harmony is restored to the urban environment.</p>
-			 
-			<h2>Economic Benefits</h2>
-			<p>Individual trees and shrubs have value, but the variability of species, size, condition, and function makes determining their economic value difficult. The economic benefits of trees can be both direct and indirect. Direct economic benefits are usually associated with energy costs. Air-conditioning costs are lower in a tree-shaded home. Heating costs are reduced when a home has a windbreak. Trees increase in value from the time they are planted until they mature. Trees are a wise investment of funds because landscaped homes are more valuable than nonlandscaped homes. The savings in energy costs and the increase in property value directly benefit each home owner.</p>
-			<p>The indirect economic benefits of trees are even greater. These benefits are available to the community or region. Lowered electricity bills are paid by customers when power companies are able to use less water in their cooling towers, build fewer new facilities to meet peak demands, use reduced amounts of fossil fuel in their furnaces, and use fewer measures to control air pollution. Communities also can save money if fewer facilities must be built to control storm water in the region. To the individual, these savings are small, but to the community, reductions in these expenses are often in the thousands of dollars.</p>
+		<article data-cols="3" data-theme="b">
+			<h1>SEO Benefits of Responsive Web Design</h1>
+			<p>Site owners have many competing needs when developing mobile sites. Different devices, different capabilities, different screen sizes and resolutions, all have an impact on designing and developing mobile sites today.</p>
+			<p>According to Mongoose Metrics, a tracking and analysis firm, only 9 percent of sites are ready for mobile in 2012. The primary consideration with mobile tends to be enabling better usability and - for ecommece sites - conversion. Another study by Compuware, a software and services provider, shows that 57 percent of users will not recommend a company with a bad mobile site and 40 percent of users will visit a competitor's site rather than using a poorly optimized mobile site. The case for usability and conversion as primary concerns in the drive to take ecommerce sites mobile is easy to make. Fortunately, responsive web design - the leading solution to the mobile usability challenge - is also beneficial to search engine optimization.</p>
 			
-			<h2>Trees Require an Investment</h2>
-			<p>Trees provide numerous aesthetic and economic benefits but also incur some costs. You need to be aware that an investment is required for your trees to provide the benefits that you desire. The biggest cost of trees and shrubs occurs when they are purchased and planted. Initial care almost always includes some watering. Leaf, branch, and whole tree removal and disposal can be expensive.</p>
-			<p>To function well in the landscape, trees require maintenance. Much can be done by the informed home owner. Corrective pruning and mulching gives trees a good start. Shade trees, however, quickly grow to a size that may require the services of a professional arborist. Arborists have the knowledge and equipment needed to prune, spray, fertilize, and otherwise maintain a large tree. Your garden center owner, university extension agent, community forester, or consulting arborist can answer questions about tree maintenance, suggest treatments, or recommend qualified arborists.</p>
+			<h2>What Is Responsive Web Design?</h2>
+			<p>Responsive web design is a concept that blends CSS, CSS3 and JavaScript to create fluid site designs that can expand, contract, rearrange or remove content based upon the user's screen size. Instead of developing different sites for devices with different screen sizes and capabilities, one site with one set of pages reacts flexibly to display optimally on everything from a 27-inch desktop monitor to a three and a half-inch iPhone display. The usability benefits are obvious: Customers can interact with a site regardless of the device they're using instead of having to choose between viewing the whole page illegibly or one small part of it that's disorienting. Where usability improves, decrease bounce rates and increased conversions are usually not far behind.</p>
+			<p>True, there are cases where the function and content of the mobile site needs to be different than the desktop site. Responsive design can handle those instances also via CSS by removing or reducing the visibility of content that's less relevant to mobile users. In some cases only a mobile app will really meet the needs of mobile users. But this article is about neither mobile apps nor the technical details of implementing responsive web design. For an excellent technical overview and references to other resources, see Smashing Magazine's "Responsive Web Design: What It Is and How to Use It."</p>
 			
-			<h2>The PHC Alternative</h2>
-			<p>Maintaining mature landscapes is a complicated undertaking. You may wish to consider a professional plant health care (PHC) maintenance program that is now available from many landscape care companies. The program is designed to maintain plant vigor and initially should include inspections to detect and treat any existing problems that could be damaging or fatal. Thereafter, regular inspections and preventive maintenance help ensure plant health and beauty. Refer to our plant health care brochure for more information.</p>
-			</article>
+			<h2>Responsive Web Design Benefits SEO</h2>
+			<p>Fortunately, search engine optimization offers another great reason to consider responsive web design: links. The alternative to developing a single responsive site that meets all device needs is to develop multiple sites to meet individual device needs. One site for desktop browsers, one for smartphone browsers, one for tablets, and each has to be maintained separately after the expense of designing and developing them separately. From a search engine perspective, each needs links and/or user agent-specific redirects to get customers to the right version of the site. One site means one set of links to build, and no annoying redirects to add to server load, site speed and maintenance hassles.</p>
+			<p>Think of it this way, Groupon has developed Touch.groupon.com for smartphones, Ipad.groupon.com for the iPad, and www.groupon.com for desktop computers. The search engines don't have much interest in figuring out which sites should receive searches on which devices, though they easily could with their ability to crawl sites as different browser types. The point is that the onus is on the site to redirect the customers to the site that meet their device's needs. For more on this, see "How to Benefit from Googlebot Mobile's New Smarts," my recent article on that topic.</p>
+			<p>Most ecommerce sites I've visited do a terrible job of redirecting customers to a mobile version of a site - if they even have a mobile site in the first place. Even my poster child for mobile success, Amazon.com, uses different sites for different devices and redirects, instead of responsive design. In their case, however, it's hard to argue for a change when they're running on all cylinders with their current solution.</p>
+			
+			<h2>Do Links Matter for Mobile Sites?</h2>
+			<p>So back to links. If a site has to physically redirect mobile users from its desktop site to its mobile site, and if smartphone and tablet sites rarely if ever rank in the search results, what do links matter for mobile sites? Excellent question. It's not about getting more links to the mobile version so it can rank. It's the fact that some mobile users may create links to or share pages from the mobile site, which essentially steals link equity from the desktop site.</p>
+			<p>Say a mobile version of a product page has links to it from two blogs, two Tweets, two Facebook Likes and two Google +1s. But the desktop version of that same page has links to it from 20 blogs, 20 Tweets, 20 Facebook Likes and 20 Google +1s. The mobile version of that page is almost certainly not going to rank, and it's stealing those links and shares from the stronger desktop version of the site. If the site had been built using responsive design, the single product page would have 22 of each type of link and share instead of 20 and two to separate pages. In summary, the benefit is consolidation is link equity to a single page, enabling that single page to send stronger signals and rank better than the two separate pages could have alone.</p>			
+		</article>
 		
 		
 		<article data-cols="2" data-theme="a">
-			<figure>
-				<img src="../img/web/logo.png"/>
-			</figure>
-			
 			<h1>Contact</h1>
 			 <p>Jaap Redeker</p>
 			 <p>06 102 65 876</p>

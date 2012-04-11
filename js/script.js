@@ -32,6 +32,7 @@ $(document).ready(function(){
 			setPages();
 			gotoPage();
 		}
+
 		
 		//-------------
 		//  Flushing content
@@ -150,11 +151,11 @@ $(document).ready(function(){
 					
 					// Removes headers if its shown half on a page (#1)
 					var remove = false;
-					if((heightOfPage-totalCounted) < (2*lineHeight) && heightOfPage-totalCounted > 0){
+					if((heightOfPage-totalCounted) < (4*lineHeight) && heightOfPage-totalCounted > 0){
 						if(typeof(elements[current["element"]]) != 'undefined'){
 							if(elements[current["element"]]["node"] == "H2"){
-							totalCounted += heightOfPage-totalCounted;
-							remove = true; 
+								totalCounted += heightOfPage-totalCounted;
+								remove = true;
 							}
 						}
 					}			
@@ -171,7 +172,7 @@ $(document).ready(function(){
 					// Place the content into the current pages/columns
 					var iden = key+"_"+current["page"]+"_"+current["column"];
 					$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+' id="'+iden+'">'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
-					totalCounted += $("#"+iden).height();
+					totalCounted += $("#"+iden).outerHeight(true);
 					
 					// Checks if item has to be removed (#1)
 					if(remove){
@@ -181,19 +182,26 @@ $(document).ready(function(){
 					
 					// Use the margin on a element if there is any
 					if(marginTop != 0){
+						if(marginTop < 0){
+							marginTop = 0;
+						}
+						if(current["column"] == (value["data-cols"]-1)){
+							
+						}
 						totalCounted -= marginTop;
 						$("#"+iden).css("marginTop", -marginTop+"px");
 						marginTop = 0;
 					}
 					
 					// Gets the height of the last placed element And removes the id attribute
-					lastItemHeight	=	$("#"+iden).height();
+					lastItemHeight	=	$("#"+iden).outerHeight(true);
 					$("#"+iden).removeAttr("id");
 					
 					
 					// Makes a new column
 					if(totalCounted > heightOfPage){
 						if(current["column"] >= cols){
+							$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).addClass("last_column");
 							current["page"]++;
 							current["column"]		=	1;
 							$(".viewer", thisElement).append('<div class="page page-'+current["page"]+' theme-'+value["data-theme"]+'" id="article_'+key+'" data-pageNumber="'+current["page"]+'" data-articleNumber="'+key+'" style="width: '+(widthOfColumn+space)+'px; height: '+heightOfPage+'px"></div>');
