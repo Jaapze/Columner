@@ -11,11 +11,12 @@
     <body>
 	
 	<div class="container">
-		<article data-cols="3" data-theme="b">
+		<article data-cols="4" data-theme="b">
+			<!--<figure><img src="http://s3.amazonaws.com/intridea.com/production/images/513/large.png" width="280"/></figure>-->
 			<h1>SEO Benefits of Responsive Web Design</h1>
+			<h3>MARCH 01, 2012 - BY JILL KOCHER</h3>
 			<p>Site owners have many competing needs when developing mobile sites. Different devices, different capabilities, different screen sizes and resolutions, all have an impact on designing and developing mobile sites today.</p>
 			<p>According to Mongoose Metrics, a tracking and analysis firm, only 9 percent of sites are ready for mobile in 2012. The primary consideration with mobile tends to be enabling better usability and - for ecommece sites - conversion. Another study by Compuware, a software and services provider, shows that 57 percent of users will not recommend a company with a bad mobile site and 40 percent of users will visit a competitor's site rather than using a poorly optimized mobile site. The case for usability and conversion as primary concerns in the drive to take ecommerce sites mobile is easy to make. Fortunately, responsive web design - the leading solution to the mobile usability challenge - is also beneficial to search engine optimization.</p>
-			
 			<h2>What Is Responsive Web Design?</h2>
 			<p>Responsive web design is a concept that blends CSS, CSS3 and JavaScript to create fluid site designs that can expand, contract, rearrange or remove content based upon the user's screen size. Instead of developing different sites for devices with different screen sizes and capabilities, one site with one set of pages reacts flexibly to display optimally on everything from a 27-inch desktop monitor to a three and a half-inch iPhone display. The usability benefits are obvious: Customers can interact with a site regardless of the device they're using instead of having to choose between viewing the whole page illegibly or one small part of it that's disorienting. Where usability improves, decrease bounce rates and increased conversions are usually not far behind.</p>
 			<p>True, there are cases where the function and content of the mobile site needs to be different than the desktop site. Responsive design can handle those instances also via CSS by removing or reducing the visibility of content that's less relevant to mobile users. In some cases only a mobile app will really meet the needs of mobile users. But this article is about neither mobile apps nor the technical details of implementing responsive web design. For an excellent technical overview and references to other resources, see Smashing Magazine's "Responsive Web Design: What It Is and How to Use It."</p>
@@ -30,7 +31,6 @@
 			<p>Say a mobile version of a product page has links to it from two blogs, two Tweets, two Facebook Likes and two Google +1s. But the desktop version of that same page has links to it from 20 blogs, 20 Tweets, 20 Facebook Likes and 20 Google +1s. The mobile version of that page is almost certainly not going to rank, and it's stealing those links and shares from the stronger desktop version of the site. If the site had been built using responsive design, the single product page would have 22 of each type of link and share instead of 20 and two to separate pages. In summary, the benefit is consolidation is link equity to a single page, enabling that single page to send stronger signals and rank better than the two separate pages could have alone.</p>			
 		</article>
 		
-		
 		<article data-cols="2" data-theme="a">
 			<h1>Contact</h1>
 			 <p>Jaap Redeker</p>
@@ -39,12 +39,10 @@
 			 <p>http://www.atticweb.nl</p>
 		</article>
 		
-		
-		
 	</div>
-	
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script src="js/swipe.js"></script>
+		<script src="js/cookie.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

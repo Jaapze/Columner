@@ -1,9 +1,12 @@
-$(document).ready(function(){
+$.event.props = $.event.props.join('|').replace('layerX|layerY|', '').split('|');
+$(window).bind("load", function(){
+	
 	//variables
 		//This
 			var thisElement = $('div.container');
 			var documentHeight;
 			var documentWidth;
+			var keyPressed = false;
 		//Content
 			var content;
 			var articles = {};
@@ -25,7 +28,6 @@ $(document).ready(function(){
 		//-------------
 		
 		function init(){
-			setHeightWidth();
 			setArticles();
 			flush();
 			setLayers();
@@ -51,19 +53,9 @@ $(document).ready(function(){
 		//-------------
 		
 		function setLayers(){
-			thisElement.html('<div class="viewer"></div><div class="menu"></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageCounter"></div></div>');
+			thisElement.html('<div class="viewer"><div class="status"></div></div><div class="sideMenu"><ul></ul></div><div class="menu"><ul><li id="bookmark">Bookmark</li></ul></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageCounter"></div></div>');
 			// Setting height of the viewer
 			$(".viewer").css("height", getDocHeight()-60+"px");
-		}
-		
-		//-------------
-		// 	Dimensions of the document
-		//-------------
-		
-		function setHeightWidth(){
-			documentHeight				=	thisElement.outerHeight();
-			documentWidth				=	thisElement.outerWidth();
-			thisElement.css("width", "100%");
 		}
 		
 		//-------------
@@ -74,14 +66,14 @@ $(document).ready(function(){
 			// Foreach the article tags
 			thisElement.children().each(function(_, node) {
 				articles[ _ ] = { };
-				articles[ _ ]["data-cols"]		=	node.getAttribute('data-cols');
-				articles[ _ ]["data-theme"]	=	node.getAttribute('data-theme');
+				articles[ _ ]["data-cols"]		=	(node.getAttribute('data-cols') != null)?node.getAttribute('data-cols'):'3';
+				articles[ _ ]["data-theme"]	=	(node.getAttribute('data-theme') != null)?node.getAttribute('data-theme'):'a';
 				var count	=	0;
 				var items	=	{ };
 				var title;
 				var titleFound	=	false;
 				$(this).children().each(function(_, node) {
-					if(node.nodeName != '#text'){
+					if(node.nodeName != '#text' && node.innerHTML.trim() != ''){
 						items[ count ] = { };
 						items[ count ]["node"]			=	node.nodeName;
 						items[ count ]["value"]			=	node.innerHTML;
@@ -120,15 +112,19 @@ $(document).ready(function(){
 				var heightOfPage	=	(HM < lineHeight/2)
 					?(getDocHeight()-120)-HM
 					:(getDocHeight()-120)+(lineHeight-HM);	
-				
+
 				var done = false;
 				var marginTop = 0;
 				var lastItemHeight;
+				
 				
 				// If determined number of columns does not fit onto the page it will recalculate the number of columns
 				if(value["data-cols"]*(widthOfColumn+space) > getDocWidth())
 				{
 					var cols	=	Math.floor(getDocWidth()/(widthOfColumn+space));
+					if(cols == 1){
+						$(".sideMenu").hide();
+					}
 				}else{
 					var cols	=	value["data-cols"];
 				}
@@ -149,9 +145,11 @@ $(document).ready(function(){
 						marge = 0;
 					}
 					
+					
+					
 					// Removes headers if its shown half on a page (#1)
 					var remove = false;
-					if((heightOfPage-totalCounted) < (4*lineHeight) && heightOfPage-totalCounted > 0){
+					if((heightOfPage-totalCounted) < (5*lineHeight) && heightOfPage-totalCounted > 0 && heightOfPage > 7*lineHeight){
 						if(typeof(elements[current["element"]]) != 'undefined'){
 							if(elements[current["element"]]["node"] == "H2"){
 								totalCounted += heightOfPage-totalCounted;
@@ -159,7 +157,6 @@ $(document).ready(function(){
 							}
 						}
 					}			
-					
 					// Check if all elements are done
 					if(typeof(elements[current["element"]]) == 'undefined'){
 						done = true;
@@ -169,10 +166,15 @@ $(document).ready(function(){
 						break;
 					}
 					
-					// Place the content into the current pages/columns
-					var iden = key+"_"+current["page"]+"_"+current["column"];
-					$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+' id="'+iden+'">'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
-					totalCounted += $("#"+iden).outerHeight(true);
+					if(elements[current["element"]]["node"] != "FIGURE"){
+						// Place the content into the current pages/columns
+						var iden = key+"_"+current["page"]+"_"+current["column"];
+						$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+' id="'+iden+'">'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
+						totalCounted += $("#"+iden).outerHeight(true);
+					}else{
+						//figure
+						$(".page-"+current["page"]+"#article_"+key+" .column_"+current["column"]).append('<'+elements[current["element"]]["node"]+'>'+elements[current["element"]]["value"]+'</'+elements[current["element"]]["node"]+'>');
+					}
 					
 					// Checks if item has to be removed (#1)
 					if(remove){
@@ -194,7 +196,7 @@ $(document).ready(function(){
 					}
 					
 					// Gets the height of the last placed element And removes the id attribute
-					lastItemHeight	=	$("#"+iden).outerHeight(true);
+					lastItemHeight	=	$("#"+iden).outerHeight();
 					$("#"+iden).removeAttr("id");
 					
 					
@@ -210,9 +212,10 @@ $(document).ready(function(){
 						}
 						$(".page-"+current["page"]+"#article_"+key).append('<div class="column column_'+current["column"]+'" style="height: '+heightOfPage+'px"></div>');
 						$(".page-"+current["page"]+"#article_"+key).width((widthOfColumn+space)*current["column"]);
-						marge = totalCounted-heightOfPage;
+						marge = (totalCounted-heightOfPage);
 						totalCounted = 0;
 					}
+					
 				}
 				while(done != true);
 				
@@ -254,17 +257,32 @@ $(document).ready(function(){
 		//-------------
 		//	Handeling all of the navigation with arrow keys
 		//-------------
-
+		
 		$(document).keydown(function(e){
 			// Left arrow
 			if(e.keyCode == 37){
 				prevPage();
+				keyPressed	=	true;
 			}
 			// Right arrow
 			if(e.keyCode == 39){
 				nextPage();
+				keyPressed	=	true;
 			}
 		});
+		
+		//-------------
+		//	Handeling changing of the hash
+		//-------------
+		
+		window.onhashchange = function()
+		{
+			if(keyPressed	!=	true){
+				gotoPage();
+			}else{
+				keyPressed = false;
+			}
+		}
 		
 		//-------------
 		//	Handeling all of the navigation with scrollWheel
@@ -297,13 +315,15 @@ $(document).ready(function(){
 			{
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber++;
-				$(".page-"+pageNumber+"#article_"+article).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
 			}else if($(".page.first#article_"+(article+1)).is(':hidden')){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				article++;
+				updateMenu();
 				pageNumber = 1;
-				$(".page.first#article_"+article).fadeIn(500);
+				$(".page.first#article_"+article).stop(true, true).fadeIn(500);
 			}
+			window.location = "#"+article+"/"+pageNumber;
 			updatePageCounter();
 		}
 		
@@ -318,18 +338,19 @@ $(document).ready(function(){
 			}else if(article == 0){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber--;
-				$(".page-"+pageNumber+"#article_"+article).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
 			}else if(article > 0 && pageNumber == 1){
-				
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				article--;
+				updateMenu();
 				$(".page.last#article_"+article).fadeIn(500);
 				pageNumber = $(".page.last#article_"+article).attr("data-pagenumber");
 			}else if(article > 0){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber--;
-				$(".page-"+pageNumber+"#article_"+article).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
 			}
+			window.location = "#"+article+"/"+pageNumber;
 			updatePageCounter();
 		}
 		
@@ -339,6 +360,11 @@ $(document).ready(function(){
 		
 		function updatePageCounter(){
 			$(".pageCounter").html(articleTitles[article]+" ("+pageNumber+" / "+parseInt(($("body").find("#article_"+article+":hidden").length)+1)+")");
+			if(parseInt(($("body").find("#article_"+article+":hidden").length)+1) > 2){
+				$(".status").stop(true, true).hide().css("width", (pageNumber/parseInt(($("body").find("#article_"+article+":hidden").length)+1))*100+"%").fadeIn(300);
+			}else{
+				$(".status").css("width", "0%");
+			}
 		}
 		
 		//-------------
@@ -346,10 +372,20 @@ $(document).ready(function(){
 		//-------------
 		
 		function gotoPage(){
+		//checks for hashes
+			if(window.location.hash) {
+				var hash		=	window.location.hash.substring(1).split('/');
+				pageNumber	=	(hash[1] == undefined)?1:parseInt(hash[1]);
+				article			=	parseInt(hash[0]);
+				updatePageCounter();
+			}
+			
 			$(".page").hide();
 			if(!$(".page-"+pageNumber+"#article_"+article).is(':hidden'))
 			{
 				$(".page.last#article_"+article).show();
+				pageNumber	=	parseInt($(".page.last#article_"+article).attr("data-pageNumber"));
+				updatePageCounter();
 			}else{
 				$(".page-"+pageNumber+"#article_"+article).show();
 			}
@@ -404,4 +440,26 @@ $(document).ready(function(){
 			$(".menu").slideToggle(200);
 			return false;
 		});
+		
+		$(".sideMenu").live('click', function(){
+			$(".sideMenu").animate({left: 0}, 500);
+			return false;
+		});
+		
+		$('.sideMenu').live('click', function() {
+			$('.sideMenu').toggle(function() {
+				$(".sideMenu").animate({left: 0}, 500);
+			},function(){
+				$(".sideMenu").animate({left: -150}, 500);
+			});
+		});
+		
+		$.each(articles, function(key, value){
+			$(".sideMenu ul").append('<li id="'+key+'">'+value["title"]+"</li>");
+		});
+		
+		function updateMenu(){
+			$(".sideMenu ul li").css("background", "none");
+			$(".sideMenu ul li#"+article).css("background", "#ccc");
+		}
 });

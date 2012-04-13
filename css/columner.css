@@ -1,5 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:700|Maven+Pro:400,700);
 body{
 	overflow: hidden;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 a{
 	color: #000;
@@ -12,30 +14,43 @@ a{
 	-webkit-tap-highlight-color: rgba(0,0,0,0); 
 }
 h1{
-	font-family: "Times New Roman", serif;
-	line-height: 25px;
-	padding: 15px 0 10px 0; /*total must be line-height*/
-	font-size: 28px;
-}
-h2{
-	font-family: "Times New Roman", serif;
+	font-family: 'Arvo', serif;
 	line-height: 25px;
 	padding: 15px 0 10px 0; /*total must be line-height*/
 	font-size: 20px;
+	color: #425059;
+}
+h2{
+	font-family: 'Arvo', serif;
+	line-height: 25px;
+	padding: 15px 0 10px 0; /*total must be line-height*/
+	font-size: 16px;
+	color: #425059;
+}
+h3{
+	font-family: 'Arvo', serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #999;
 }
 p{
 	text-indent: 20px;
 	font-size: 14px;
 	line-height: 25px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: 'Maven Pro', sans-serif;
 }
+
 figure{
-	height: 300px;
+	height: 200px;
+	overflow:hidden;
+	position: absolute;
+	right: 20px;
 }
+
 div.column{
 	line-height: 25px;
 	font-size: 14px;
-	font-family: "Times New Roman", serif;
+	font-family: 'Maven Pro', sans-serif;
 	float: left;
 	overflow: hidden;
 	margin-left: 20px;
@@ -58,7 +73,7 @@ div.toolbar{
 	position: relative;
 	width: 100%;
 	height: 40px;
-	background: #333;
+	background: #425059;
 	bottom: 0;
 	font-size: 14px;
 	font-family: arial, verdana;
@@ -98,7 +113,7 @@ div.page.theme-b{
 }
 a.button{
 	color: #fff;
-	background: #666;
+	background: #2D3940;
 	display: block;
 	float: left;
 	width: 80px;
@@ -110,11 +125,50 @@ a.button{
 }
 div.menu{
 	position: absolute;
-	background: #333;
+	background: #666;
 	bottom: 40px;
 	left: 0;
 	padding: 10px;
 	height: 100px;
 	width: 150px;
 	display: none;
+}
+div.menu ul li{
+	color: #fff;
+	font-size: 14px;
+	border: 1px solid #999;
+	padding: 4px;
+	cursor: pointer;
+}
+div.menu ul li:hover{
+	background: #999;
+	color: #000;
+}
+div.sideMenu{
+	position: absolute;
+	height: 100%;
+	width: 150px;
+	top: 0;
+	left: -150px;
+	border-right: 10px solid #E8633C;
+	background: #f2f2f2;
+	display: none; /*testing*/
+}
+
+div.sideMenu ul li{
+	margin: 10px 0 0 0;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 5px;
+}
+div.sideMenu ul li:first-child{
+	background: #ccc;
+}
+
+div.status{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 2px;
+	background: #666;
 }
