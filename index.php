@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="shortcut icon" type="image/png" href="images/fav.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon.png" />
         <title>Columner</title>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/columner.css" />
@@ -42,7 +43,6 @@
 	</div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script src="js/swipe.js"></script>
-		<script src="js/cookie.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

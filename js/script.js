@@ -49,11 +49,11 @@ $(window).bind("load", function(){
 		//   - viewer
 		//   - menu/button
 		//   - toolbar
-		//   - pageCounter
+		//   - pageInfo
 		//-------------
 		
 		function setLayers(){
-			thisElement.html('<div class="viewer"><div class="status"></div></div><div class="sideMenu"><ul></ul></div><div class="menu"><ul><li id="bookmark">Bookmark</li></ul></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageCounter"></div></div>');
+			thisElement.html('<div class="viewer"><div class="status"></div></div><div class="sideMenu"><ul></ul></div><div class="menu"><ul><li id="bookmark">Bookmark</li></ul></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageInfo"></div></div>');
 			// Setting height of the viewer
 			$(".viewer").css("height", getDocHeight()-60+"px");
 		}
@@ -119,9 +119,9 @@ $(window).bind("load", function(){
 				
 				
 				// If determined number of columns does not fit onto the page it will recalculate the number of columns
-				if(value["data-cols"]*(widthOfColumn+space) > getDocWidth())
+				if(value["data-cols"]*(widthOfColumn+space+10) > getDocWidth())
 				{
-					var cols	=	Math.floor(getDocWidth()/(widthOfColumn+space));
+					var cols	=	Math.floor(getDocWidth()/(widthOfColumn+space+10));
 					if(cols == 1){
 						$(".sideMenu").hide();
 					}
@@ -228,7 +228,7 @@ $(window).bind("load", function(){
 		//-------------
 		
 		function afterLoading(){
-			updatePageCounter();
+			updatePageInfo();
 		}
 		
 		//-------------
@@ -315,16 +315,16 @@ $(window).bind("load", function(){
 			{
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber++;
-				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(300);
+				updateAfterNav();
 			}else if($(".page.first#article_"+(article+1)).is(':hidden')){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				article++;
 				updateMenu();
 				pageNumber = 1;
-				$(".page.first#article_"+article).stop(true, true).fadeIn(500);
+				$(".page.first#article_"+article).stop(true, true).fadeIn(300);
+				updateAfterNav();
 			}
-			window.location = "#"+article+"/"+pageNumber;
-			updatePageCounter();
 		}
 		
 		//-------------
@@ -338,28 +338,34 @@ $(window).bind("load", function(){
 			}else if(article == 0){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber--;
-				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(300);
+				updateAfterNav();
 			}else if(article > 0 && pageNumber == 1){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				article--;
 				updateMenu();
-				$(".page.last#article_"+article).fadeIn(500);
+				$(".page.last#article_"+article).stop(true, true).fadeIn(500);
 				pageNumber = $(".page.last#article_"+article).attr("data-pagenumber");
+				updateAfterNav();
 			}else if(article > 0){
 				$(".page-"+pageNumber+"#article_"+article).hide();
 				pageNumber--;
-				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(500);
+				$(".page-"+pageNumber+"#article_"+article).stop(true, true).fadeIn(300);
+				updateAfterNav();
 			}
+		}
+		
+		function updateAfterNav(){
 			window.location = "#"+article+"/"+pageNumber;
-			updatePageCounter();
+			updatePageInfo();
 		}
 		
 		//-------------
-		//	Updates the pageCounter, number of pages and title of document
+		//	Updates the pageInfo, number of pages and title of document
 		//-------------
 		
-		function updatePageCounter(){
-			$(".pageCounter").html(articleTitles[article]+" ("+pageNumber+" / "+parseInt(($("body").find("#article_"+article+":hidden").length)+1)+")");
+		function updatePageInfo(){
+			$(".pageInfo").html(articleTitles[article]+" ("+pageNumber+" / "+parseInt(($("body").find("#article_"+article+":hidden").length)+1)+")");
 			if(parseInt(($("body").find("#article_"+article+":hidden").length)+1) > 2){
 				$(".status").stop(true, true).hide().css("width", (pageNumber/parseInt(($("body").find("#article_"+article+":hidden").length)+1))*100+"%").fadeIn(300);
 			}else{
@@ -377,7 +383,7 @@ $(window).bind("load", function(){
 				var hash		=	window.location.hash.substring(1).split('/');
 				pageNumber	=	(hash[1] == undefined)?1:parseInt(hash[1]);
 				article			=	parseInt(hash[0]);
-				updatePageCounter();
+				updatePageInfo();
 			}
 			
 			$(".page").hide();
@@ -385,7 +391,7 @@ $(window).bind("load", function(){
 			{
 				$(".page.last#article_"+article).show();
 				pageNumber	=	parseInt($(".page.last#article_"+article).attr("data-pageNumber"));
-				updatePageCounter();
+				updatePageInfo();
 			}else{
 				$(".page-"+pageNumber+"#article_"+article).show();
 			}

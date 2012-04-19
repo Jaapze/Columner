@@ -58,6 +58,7 @@ div.column{
 }
 div.viewer{
 	width: 100%;
+	position: relative;
 	background: rgb(204,204,204); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(204,204,204,1) 1%, rgba(216,216,216,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(204,204,204,1)), color-stop(100%,rgba(216,216,216,1))); /* Chrome,Safari4+ */
@@ -79,10 +80,20 @@ div.toolbar{
 	font-family: arial, verdana;
 }
 
-div.pageCounter{
+div.pageInfo{
 	float: right;
 	color: #fff;
 	margin: 12px 10px;
+	text-align: right;
+}
+
+@media all and (max-width: 500px) {
+	div.pageInfo{
+		width: 200px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 }
 
 div.page.current{
