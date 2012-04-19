@@ -4,17 +4,12 @@ $(window).bind("load", function(){
 	//variables
 		//This
 			var thisElement = $('div.container');
-			var documentHeight;
-			var documentWidth;
 			var keyPressed = false;
 		//Content
-			var content;
 			var articles = {};
 			var pageNumber = 1;
 			var article	=	0;
 			var articleTitles = {};
-		//Column
-			var columnWidth;
 		//Settings
 			var space	=	20;
 			var lineHeight	=	25;
@@ -46,14 +41,28 @@ $(window).bind("load", function(){
 		
 		//-------------
 		//	Setting all the layout and layers
-		//   - viewer
-		//   - menu/button
-		//   - toolbar
-		//   - pageInfo
 		//-------------
 		
 		function setLayers(){
-			thisElement.html('<div class="viewer"><div class="status"></div></div><div class="sideMenu"><ul></ul></div><div class="menu"><ul><li id="bookmark">Bookmark</li></ul></div><div class="toolbar"><a href="#" class="button" id="menu">Menu</a><div class="pageInfo"></div></div>');
+			//view
+			var layers	=		'<div class="viewer">';
+			layers		+=		'<div class="status"></div>';
+			layers		+=	'</div>';
+			//sidemenu
+			layers		+=	'<div class="sideMenu">';
+			layers		+=		'<ul></ul>';
+			layers		+=	'</div>';
+			//menu
+			layers		+=	'<div class="menu">';
+			layers		+=		'<ul><li id="bookmark">Bookmark</li></ul>';
+			layers		+=	'</div>';
+			//toolbar
+			layers		+=	'<div class="toolbar">';
+			layers		+=		'<a href="#" class="button" id="menu">Menu</a>';
+			layers		+=		'<div class="pageInfo"></div>';
+			layers		+=	'</div>';
+			thisElement.html(layers);
+			
 			// Setting height of the viewer
 			$(".viewer").css("height", getDocHeight()-60+"px");
 		}
@@ -355,6 +364,10 @@ $(window).bind("load", function(){
 			}
 		}
 		
+		//-------------
+		//	Updates the hash
+		//-------------
+		
 		function updateAfterNav(){
 			window.location = "#"+article+"/"+pageNumber;
 			updatePageInfo();
@@ -447,6 +460,10 @@ $(window).bind("load", function(){
 			return false;
 		});
 		
+		//-------------
+		//	SideMenu (beta)
+		//-------------
+		
 		$(".sideMenu").live('click', function(){
 			$(".sideMenu").animate({left: 0}, 500);
 			return false;
@@ -468,4 +485,8 @@ $(window).bind("load", function(){
 			$(".sideMenu ul li").css("background", "none");
 			$(".sideMenu ul li#"+article).css("background", "#ccc");
 		}
+		
+		//-------------
+		//	SideMenu (beta) //end
+		//-------------
 });
